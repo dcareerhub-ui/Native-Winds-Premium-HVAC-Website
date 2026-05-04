@@ -5,8 +5,10 @@ import Services from './components/Services';
 import BeforeAfter from './components/BeforeAfter';
 import WhyUs from './components/WhyUs';
 import Reviews from './components/Reviews';
+import HowItWorks from './components/HowItWorks';
 import About from './components/About';
 import ServiceMap from './components/ServiceMap';
+import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -21,9 +23,11 @@ function App() {
       <Services />
       <BeforeAfter />
       <WhyUs />
+      <HowItWorks />
       <Reviews />
       <About />
       <ServiceMap />
+      <FAQ />
       <CTA />
       <Contact />
       <Footer />

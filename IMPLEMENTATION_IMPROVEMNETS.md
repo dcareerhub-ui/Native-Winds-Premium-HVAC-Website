@@ -43,17 +43,17 @@ This document outlines the roadmap for upgrading the **Native Winds Premium HVAC
 ## 🧠 Phase 3: User Experience (UX) Enhancements
 *Goal: Make the site easier to navigate and more informative for the user.*
 
-- [ ] **Refined Reviews Section**
-  - [ ] Implement an auto-playing carousel for testimonials.
-  - [ ] Add "Verified Customer" badges and Google logo icons for proof.
-- [ ] **Interactive FAQ Section**
-  - [ ] Create a sleek accordion component for common questions.
-  - [ ] Ensure content covers: Pricing, Warranty, and Response Times.
-- [ ] **Mobile Optimization**
-  - [ ] Design and implement a sticky "Mobile Action Bar" with Call/Book buttons.
-  - [ ] Refine the mobile hamburger menu with smooth transitions.
-- [ ] **"How it Works" Visual**
-  - [ ] Add a horizontal step-by-step guide (1. Request -> 2. Diagnose -> 3. Relax).
+- [x] **Refined Reviews Section**
+  - [x] Implement an auto-playing carousel for testimonials.
+  - [x] Add "Verified Customer" badges and Google logo icons for proof.
+- [x] **Interactive FAQ Section**
+  - [x] Create a sleek accordion component for common questions.
+  - [x] Ensure content covers: Pricing, Warranty, and Response Times.
+- [x] **Mobile Optimization**
+  - [x] Design and implement a sticky "Mobile Action Bar" with Call/Book buttons.
+  - [x] Refine the mobile hamburger menu with smooth transitions.
+- [x] **"How it Works" Visual**
+  - [x] Add a horizontal step-by-step guide (1. Request -> 2. Diagnose -> 3. Relax).
 
 ---
 
