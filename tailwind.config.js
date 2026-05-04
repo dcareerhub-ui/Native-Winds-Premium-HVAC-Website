@@ -12,7 +12,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
       },
     },
   },

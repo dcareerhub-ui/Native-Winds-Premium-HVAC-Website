@@ -73,7 +73,7 @@ export default function Services() {
             >
               <div className="flex items-start justify-between mb-5">
                 <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center group-hover:bg-gold/15 transition-colors">
-                  <Icon className="w-5 h-5 text-gold" />
+                  <Icon className="w-5 h-5 text-gold icon-gold-glow" />
                 </div>
                 <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${tagColor}`}>{tag}</span>
               </div>

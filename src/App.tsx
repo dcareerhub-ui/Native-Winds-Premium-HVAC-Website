@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
 import Services from './components/Services';
+import BeforeAfter from './components/BeforeAfter';
 import WhyUs from './components/WhyUs';
 import Reviews from './components/Reviews';
 import About from './components/About';
@@ -17,6 +18,7 @@ function App() {
       <Hero />
       <Problem />
       <Services />
+      <BeforeAfter />
       <WhyUs />
       <Reviews />
       <About />

@@ -40,12 +40,12 @@ export default function WhyUs() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — Text */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-6">
-              <span className="text-blue-400 text-sm font-medium tracking-wide">Why Customers Choose Us</span>
+            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
+              <span className="text-gold text-sm font-medium tracking-wide">Why Customers Choose Us</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white leading-tight mb-6">
               We Built This Business on{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-300">Trust</span>
+              <span className="italic text-gold">Trust</span>
               , Not Tactics.
             </h2>
             <p className="text-white/50 text-lg leading-relaxed mb-8">
@@ -69,8 +69,8 @@ export default function WhyUs() {
                 key={title}
                 className="group bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.07] hover:border-blue-500/20 rounded-2xl p-6 transition-all duration-300"
               >
-                <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:bg-blue-500/15 transition-colors">
-                  <Icon className="w-5 h-5 text-blue-400" />
+                <div className="w-11 h-11 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center mb-4 group-hover:bg-gold/15 transition-colors">
+                  <Icon className="w-5 h-5 text-gold icon-gold-glow" />
                 </div>
                 <h3 className="text-white font-bold text-base mb-2">{title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
