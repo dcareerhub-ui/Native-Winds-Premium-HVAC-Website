@@ -80,47 +80,27 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed inset-0 z-[40] transition-all duration-500 ease-in-out ${
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`lg:hidden transition-all duration-300 overflow-hidden ${
+          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        } bg-charcoal/98 border-t border-gold/10`}
       >
-        {/* Backdrop */}
-        <div 
-          className="absolute inset-0 bg-charcoal/90 backdrop-blur-2xl" 
-          onClick={() => setMenuOpen(false)}
-        />
-        
-        <div
-          className={`absolute inset-x-0 top-0 pt-20 pb-10 px-6 bg-[#0f0f12] border-b border-gold/10 transition-transform duration-500 ease-out ${
-            menuOpen ? 'translate-y-0' : '-translate-y-full'
-          }`}
-        >
-          <div className="flex flex-col gap-1">
-            {NAV_LINKS.map((link, idx) => (
-              <button
-                key={link.href}
-                onClick={() => handleNav(link.href)}
-                className={`text-2xl font-serif text-white/80 hover:text-gold text-left py-4 border-b border-white/5 transition-all duration-300 transform ${
-                  menuOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
-                }`}
-                style={{ transitionDelay: `${idx * 50}ms` }}
-              >
-                {link.label}
-              </button>
-            ))}
-            <div className="mt-8 flex flex-col gap-4">
-               <a
-                href="tel:+15551234567"
-                className="flex items-center justify-center gap-3 bg-gold text-charcoal font-black text-sm uppercase tracking-widest py-5 rounded-2xl shadow-[0_10px_30px_rgba(212,175,55,0.3)]"
-              >
-                <Phone className="w-4 h-4 fill-charcoal" />
-                Call Now
-              </a>
-              <p className="text-center text-white/30 text-xs font-medium uppercase tracking-[0.2em]">
-                 Available 24/7 for Emergencies
-              </p>
-            </div>
-          </div>
+        <div className="px-4 py-4 flex flex-col gap-2">
+          {NAV_LINKS.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => handleNav(link.href)}
+              className="text-white/80 hover:text-gold text-left px-3 py-2.5 rounded-lg hover:bg-gold/10 transition-all font-medium"
+            >
+              {link.label}
+            </button>
+          ))}
+          <a
+            href="tel:+15551234567"
+            className="flex items-center justify-center gap-2 bg-gold text-charcoal font-bold px-5 py-3 rounded-lg mt-2 hover:bg-gold-light transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            Call Now
+          </a>
         </div>
       </div>
     </header>
