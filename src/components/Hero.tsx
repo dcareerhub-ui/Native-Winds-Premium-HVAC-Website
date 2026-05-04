@@ -48,14 +48,14 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-white leading-[1.08] tracking-tight mb-6">
             AC Broke in{' '}
             <span className="relative">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold">the Heat?</span>
+              <span className="text-gold italic">the Heat?</span>
             </span>
             <br />
             <span className="text-white">We Show Up—</span>
-            <span className="text-blue-400">Fast.</span>
+            <span className="text-white/90">Fast.</span>
           </h1>
 
           {/* Subheadline */}
@@ -90,7 +90,7 @@ export default function Hero() {
                 className="flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] rounded-xl px-3 py-3 hover:border-gold/20 transition-colors"
               >
                 <div className="w-9 h-9 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-4 h-4 text-gold" />
+                  <Icon className="w-4 h-4 text-gold icon-gold-glow" />
                 </div>
                 <div>
                   <p className="text-white text-xs font-semibold leading-tight">{label}</p>
