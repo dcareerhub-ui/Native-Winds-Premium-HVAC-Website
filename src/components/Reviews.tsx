@@ -1,5 +1,4 @@
 import { Star, Quote } from 'lucide-react';
-import { useReveal } from '../lib/hooks';
 
 const REVIEWS = [
   {
@@ -48,15 +47,13 @@ function StarRow({ count }: { count: number }) {
 }
 
 export default function Reviews() {
-  const revealRef = useReveal();
-
   return (
-    <section id="reviews" className="relative bg-[#0a0a0f] py-20 lg:py-28 overflow-hidden" ref={revealRef}>
+    <section id="reviews" className="relative bg-[#0a0a0f] py-20 lg:py-28 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,rgba(212,175,55,0.04),transparent)]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-14 reveal-hidden">
+        <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-5">
             <Star className="w-3.5 h-3.5 text-gold fill-gold" />
             <span className="text-gold text-sm font-medium tracking-wide">100+ Five-Star Reviews</span>
@@ -72,18 +69,17 @@ export default function Reviews() {
 
         {/* Reviews grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
-          {REVIEWS.map((review, index) => (
+          {REVIEWS.map((review) => (
             <div
               key={review.name}
-              className={`relative group flex flex-col rounded-2xl p-6 transition-all duration-300 glass-glow reveal-hidden ${
+              className={`relative group flex flex-col rounded-2xl p-6 transition-all duration-300 ${
                 review.highlight
                   ? 'bg-gradient-to-br from-gold/10 via-gold/5 to-transparent border border-gold/30 hover:border-gold/50'
                   : 'bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.07] hover:border-gold/15'
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
             >
               {review.highlight && (
-                <div className="absolute -top-3 left-6 animate-shimmer">
+                <div className="absolute -top-3 left-6">
                   <span className="text-xs font-bold bg-gold text-charcoal px-3 py-1 rounded-full">Most Impactful</span>
                 </div>
               )}
@@ -109,7 +105,7 @@ export default function Reviews() {
         </div>
 
         {/* Overall rating */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 bg-white/[0.03] border border-white/[0.07] rounded-2xl p-6 max-w-lg mx-auto reveal-hidden" style={{ transitionDelay: '400ms' }}>
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 bg-white/[0.03] border border-white/[0.07] rounded-2xl p-6 max-w-lg mx-auto">
           <div className="text-center">
             <p className="text-6xl font-bold text-white">5.0</p>
             <StarRow count={5} />
