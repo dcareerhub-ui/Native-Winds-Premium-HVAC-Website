@@ -1,4 +1,5 @@
 import { MapPin, Award, Users, Heart } from 'lucide-react';
+import { useReveal } from '../lib/hooks';
 
 const VALUES = [
   { icon: Award, label: 'Certified Technician', desc: 'Licensed, insured, and continuously trained' },
@@ -8,14 +9,16 @@ const VALUES = [
 ];
 
 export default function About() {
+  const revealRef = useReveal();
+
   return (
-    <section id="about" className="relative bg-charcoal py-20 lg:py-28 overflow-hidden">
+    <section id="about" className="relative bg-charcoal py-20 lg:py-28 overflow-hidden" ref={revealRef}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_60%_at_0%_50%,rgba(212,175,55,0.04),transparent)]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — Image */}
-          <div className="relative">
+          <div className="relative reveal-slide-left">
             <div className="relative overflow-hidden rounded-3xl">
               <img
                 src="https://images.pexels.com/photos/8159744/pexels-photo-8159744.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -27,7 +30,7 @@ export default function About() {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-5 -right-5 lg:-right-8 bg-charcoal border border-gold/30 rounded-2xl p-4 shadow-2xl">
+            <div className="absolute -bottom-5 -right-5 lg:-right-8 bg-charcoal border border-gold/30 rounded-2xl p-4 shadow-2xl animate-float">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center">
                   <Award className="w-5 h-5 text-gold" />
@@ -44,7 +47,7 @@ export default function About() {
           </div>
 
           {/* Right — Content */}
-          <div>
+          <div className="reveal-slide-right">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
               <span className="text-gold text-sm font-medium tracking-wide">Meet Your Technician</span>
             </div>
@@ -72,10 +75,11 @@ export default function About() {
 
             {/* Values */}
             <div className="grid grid-cols-2 gap-3">
-              {VALUES.map(({ icon: Icon, label, desc }) => (
+              {VALUES.map(({ icon: Icon, label, desc }, index) => (
                 <div
                   key={label}
-                  className="flex items-start gap-3 bg-white/[0.03] border border-white/[0.07] rounded-xl p-4"
+                  className="flex items-start gap-3 bg-white/[0.03] border border-white/[0.07] rounded-xl p-4 glass-glow reveal-hidden"
+                  style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Icon className="w-4 h-4 text-gold" />

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Wind, Phone, Menu, X } from 'lucide-react';
+import { useScrollProgress } from '../lib/hooks';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
@@ -12,6 +13,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  useScrollProgress();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -31,15 +33,17 @@ export default function Navbar() {
         scrolled ? 'bg-charcoal/95 backdrop-blur-md shadow-xl border-b border-gold/20' : 'bg-transparent'
       }`}
     >
+      <div className="scroll-progress" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <button onClick={() => handleNav('#home')} className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-lg bg-gold/10 border border-gold/40 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+            <div className="w-9 h-9 rounded-lg bg-gold/10 border border-gold/40 flex items-center justify-center group-hover:bg-gold/20 transition-all duration-500 group-hover:rotate-[360deg]">
               <Wind className="w-5 h-5 text-gold" />
             </div>
             <div className="text-left">
-              <p className="text-white font-bold text-sm leading-tight tracking-wide">Native Winds</p>
+              <p className="text-white font-bold text-sm leading-tight tracking-wide group-hover:text-gold transition-colors">Native Winds</p>
               <p className="text-gold/70 text-xs leading-tight tracking-widest uppercase">Heating & Cooling</p>
             </div>
           </button>
@@ -50,9 +54,10 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNav(link.href)}
-                className="text-white/70 hover:text-gold text-sm font-medium tracking-wide transition-colors"
+                className="text-white/70 hover:text-gold text-sm font-medium tracking-wide transition-all relative group"
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </nav>
@@ -61,7 +66,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+15551234567"
-              className="flex items-center gap-2 bg-gold hover:bg-gold-light text-charcoal font-bold text-sm px-5 py-2.5 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+              className="flex items-center gap-2 bg-gold hover:bg-gold-light text-charcoal font-bold text-sm px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:scale-[1.05] active:scale-95"
             >
               <Phone className="w-4 h-4" />
               Call Now
@@ -80,7 +85,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
+        className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden ${
           menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } bg-charcoal/98 border-t border-gold/10`}
       >
@@ -96,7 +101,7 @@ export default function Navbar() {
           ))}
           <a
             href="tel:+15551234567"
-            className="flex items-center justify-center gap-2 bg-gold text-charcoal font-bold px-5 py-3 rounded-lg mt-2 hover:bg-gold-light transition-colors"
+            className="flex items-center justify-center gap-2 bg-gold text-charcoal font-bold px-5 py-3 rounded-lg mt-2 hover:bg-gold-light transition-all duration-300 active:scale-95"
           >
             <Phone className="w-4 h-4" />
             Call Now

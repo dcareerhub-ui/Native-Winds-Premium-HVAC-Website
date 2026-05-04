@@ -1,4 +1,5 @@
 import { Zap, Search, Smile, BadgeDollarSign } from 'lucide-react';
+import { useReveal } from '../lib/hooks';
 
 const REASONS = [
   {
@@ -32,14 +33,16 @@ const REASONS = [
 ];
 
 export default function WhyUs() {
+  const revealRef = useReveal();
+
   return (
-    <section className="relative bg-charcoal py-20 lg:py-28 overflow-hidden">
+    <section className="relative bg-charcoal py-20 lg:py-28 overflow-hidden" ref={revealRef}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_100%_50%,rgba(59,130,246,0.04),transparent)]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — Text */}
-          <div>
+          <div className="reveal-slide-left">
             <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-6">
               <span className="text-blue-400 text-sm font-medium tracking-wide">Why Customers Choose Us</span>
             </div>
@@ -53,8 +56,12 @@ export default function WhyUs() {
               Native Winds was founded to be the honest alternative — the company your neighbor recommends, not the one you regret calling.
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {REASONS.map(({ stat, statLabel }) => (
-                <div key={statLabel} className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
+              {REASONS.map(({ stat, statLabel }, index) => (
+                <div 
+                  key={statLabel} 
+                  className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4 reveal-hidden"
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                >
                   <p className="text-3xl font-bold text-gold mb-1">{stat}</p>
                   <p className="text-white/50 text-sm">{statLabel}</p>
                 </div>
@@ -63,11 +70,12 @@ export default function WhyUs() {
           </div>
 
           {/* Right — Feature Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {REASONS.map(({ icon: Icon, title, desc }) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 reveal-slide-right">
+            {REASONS.map(({ icon: Icon, title, desc }, index) => (
               <div
                 key={title}
-                className="group bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.07] hover:border-blue-500/20 rounded-2xl p-6 transition-all duration-300"
+                className="group bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.07] hover:border-blue-500/20 rounded-2xl p-6 transition-all duration-300 glass-glow"
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:bg-blue-500/15 transition-colors">
                   <Icon className="w-5 h-5 text-blue-400" />

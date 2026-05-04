@@ -7,19 +7,19 @@ This document outlines the roadmap for upgrading the **Native Winds Premium HVAC
 ## 🏗️ Phase 1: Motion & Micro-Interactions
 *Goal: Add a sense of luxury and responsiveness through smooth, purposeful animations.*
 
-- [ ] **Scroll Reveal Animations**
-  - [ ] Implement staggered reveals for `Services` cards.
-  - [ ] Implement slide-in reveals for `About` and `Why Us` sections.
-  - [ ] Add fade-in for `Reviews` and `Trust Badges`.
-- [ ] **Hero Section Dynamics**
-  - [ ] Add a subtle "shimmer" effect to the "Available Today" badge.
-  - [ ] Implement a soft floating animation for the Hero image/overlay.
-- [ ] **Interactive Hover States**
-  - [ ] Add "Glass-glow" borders to cards on hover.
-  - [ ] Implement a slight scale-up (1.02x) and shadow deepening for primary CTA buttons.
-- [ ] **Smooth Navigation**
-  - [ ] Polish smooth-scroll transitions between sections.
-  - [ ] Add a scroll-progress indicator at the top of the viewport.
+- [x] **Scroll Reveal Animations**
+  - [x] Implement staggered reveals for `Services` cards.
+  - [x] Implement slide-in reveals for `About` and `Why Us` sections.
+  - [x] Add fade-in for `Reviews` and `Trust Badges`.
+- [x] **Hero Section Dynamics**
+  - [x] Add a subtle "shimmer" effect to the "Available Today" badge.
+  - [x] Implement a soft floating animation for the Hero image/overlay.
+- [x] **Interactive Hover States**
+  - [x] Add "Glass-glow" borders to cards on hover.
+  - [x] Implement a slight scale-up (1.02x) and shadow deepening for primary CTA buttons.
+- [x] **Smooth Navigation**
+  - [x] Polish smooth-scroll transitions between sections.
+  - [x] Add a scroll-progress indicator at the top of the viewport.
 
 ---
 

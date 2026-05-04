@@ -1,4 +1,5 @@
 import { Wrench, Settings, RefreshCw, ShieldCheck } from 'lucide-react';
+import { useReveal } from '../lib/hooks';
 
 const SERVICES = [
   {
@@ -40,17 +41,19 @@ const SERVICES = [
 ];
 
 export default function Services() {
+  const revealRef = useReveal();
+
   const scrollToContact = () => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="services" className="relative bg-[#0a0a0f] py-20 lg:py-28 overflow-hidden">
+    <section id="services" className="relative bg-[#0a0a0f] py-20 lg:py-28 overflow-hidden" ref={revealRef}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(212,175,55,0.04),transparent)]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 reveal-hidden">
           <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-5">
             <Wrench className="w-3.5 h-3.5 text-gold" />
             <span className="text-gold text-sm font-medium tracking-wide">What We Do</span>
@@ -66,16 +69,17 @@ export default function Services() {
 
         {/* Services grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
-          {SERVICES.map(({ icon: Icon, title, tag, tagColor, desc, items, cta }) => (
+          {SERVICES.map(({ icon: Icon, title, tag, tagColor, desc, items, cta }, index) => (
             <div
               key={title}
-              className="group bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.07] hover:border-gold/20 rounded-2xl p-6 flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+              className="group bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.07] hover:border-gold/20 rounded-2xl p-6 flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] glass-glow reveal-hidden"
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="flex items-start justify-between mb-5">
                 <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center group-hover:bg-gold/15 transition-colors">
                   <Icon className="w-5 h-5 text-gold" />
                 </div>
-                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${tagColor}`}>{tag}</span>
+                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${tagColor} ${title === 'AC Repair' ? 'animate-shimmer' : ''}`}>{tag}</span>
               </div>
 
               <h3 className="text-white font-bold text-lg mb-3">{title}</h3>
@@ -92,7 +96,7 @@ export default function Services() {
 
               <button
                 onClick={scrollToContact}
-                className="w-full text-center text-gold hover:text-charcoal bg-gold/10 hover:bg-gold border border-gold/30 hover:border-gold text-sm font-semibold py-2.5 rounded-xl transition-all duration-200"
+                className="w-full text-center text-gold hover:text-charcoal bg-gold/10 hover:bg-gold border border-gold/30 hover:border-gold text-sm font-semibold py-2.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 {cta}
               </button>

@@ -1,4 +1,5 @@
 import { Phone, Calendar, Star, Clock, DollarSign, ShieldCheck } from 'lucide-react';
+import { useReveal } from '../lib/hooks';
 
 const TRUST_BADGES = [
   { icon: Star, label: '5-Star Rated', sub: '100+ Reviews' },
@@ -8,6 +9,8 @@ const TRUST_BADGES = [
 ];
 
 export default function Hero() {
+  const revealRef = useReveal();
+  
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -16,12 +19,13 @@ export default function Hero() {
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      ref={revealRef}
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-[#0a0a0f] to-[#0d1520]" />
 
       {/* Radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(212,175,55,0.08),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(212,175,55,0.08),transparent)] animate-pulse duration-[10s]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_60%,rgba(59,130,246,0.06),transparent)]" />
 
       {/* Grid overlay */}
@@ -31,7 +35,7 @@ export default function Hero() {
       }} />
 
       {/* Hero image (background) */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden animate-float">
         <img
           src="https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt="HVAC technician at work"
@@ -40,9 +44,9 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl reveal-hidden">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
+          <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-6 animate-shimmer">
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
             <span className="text-gold text-sm font-medium tracking-wide">Available Today — Same-Day Service</span>
           </div>
@@ -68,14 +72,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 mb-14">
             <a
               href="tel:+15551234567"
-              className="group flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-charcoal font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] active:scale-[0.98]"
+              className="group flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-charcoal font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] hover:scale-[1.02] active:scale-[0.98]"
             >
               <Phone className="w-5 h-5 group-hover:animate-pulse" />
               Call Now — (555) 123-4567
             </a>
             <button
               onClick={() => scrollTo('#contact')}
-              className="flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/20 hover:border-gold/40 text-white font-semibold text-base px-8 py-4 rounded-xl transition-all duration-200"
+              className="flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/20 hover:border-gold/40 text-white font-semibold text-base px-8 py-4 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
             >
               <Calendar className="w-5 h-5" />
               Request Service Online
@@ -87,7 +91,7 @@ export default function Hero() {
             {TRUST_BADGES.map(({ icon: Icon, label, sub }) => (
               <div
                 key={label}
-                className="flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] rounded-xl px-3 py-3 hover:border-gold/20 transition-colors"
+                className="flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] rounded-xl px-3 py-3 hover:border-gold/20 transition-colors glass-glow"
               >
                 <div className="w-9 h-9 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-4 h-4 text-gold" />
