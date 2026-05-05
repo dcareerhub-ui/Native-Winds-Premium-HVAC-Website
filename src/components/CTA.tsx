@@ -20,9 +20,9 @@ export default function CTA() {
           <Thermometer className="w-7 h-7 text-gold" />
         </div>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-5">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif text-white leading-tight mb-5">
           Don't Wait Until<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold">the Heat Gets Worse</span>
+          <span className="italic text-gold">the Heat Gets Worse</span>
         </h2>
 
         <p className="text-white/50 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
@@ -33,14 +33,14 @@ export default function CTA() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="tel:+15551234567"
-            className="group inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-charcoal font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-[0_0_40px_rgba(212,175,55,0.5)]"
+            className="group inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-charcoal font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_10px_40px_rgba(212,175,55,0.4)] hover:scale-[1.02] active:scale-95"
           >
             <Phone className="w-5 h-5 group-hover:animate-pulse" />
             Call Now — (555) 123-4567
           </a>
           <button
             onClick={scrollToContact}
-            className="inline-flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/20 hover:border-gold/40 text-white font-semibold text-base px-8 py-4 rounded-xl transition-all duration-200"
+            className="inline-flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/20 hover:border-gold/40 text-white font-semibold text-base px-8 py-4 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-95"
           >
             <Calendar className="w-5 h-5" />
             Book Service Online

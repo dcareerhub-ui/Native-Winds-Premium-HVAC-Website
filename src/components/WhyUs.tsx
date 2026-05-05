@@ -39,7 +39,7 @@ export default function WhyUs() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — Text */}
-          <div>
+          <div className="reveal-slide-left">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
               <span className="text-gold text-sm font-medium tracking-wide">Why Customers Choose Us</span>
             </div>
@@ -63,7 +63,7 @@ export default function WhyUs() {
           </div>
 
           {/* Right — Feature Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 reveal-slide-right">
             {REASONS.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}

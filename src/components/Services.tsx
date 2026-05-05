@@ -66,10 +66,11 @@ export default function Services() {
 
         {/* Services grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
-          {SERVICES.map(({ icon: Icon, title, tag, tagColor, desc, items, cta }) => (
+          {SERVICES.map(({ icon: Icon, title, tag, tagColor, desc, items, cta }, idx) => (
             <div
               key={title}
-              className="group bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.07] hover:border-gold/20 rounded-2xl p-6 flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+              className="group bg-white/[0.03] hover:bg-white/[0.05] border border-white/[0.07] hover:border-gold/20 rounded-2xl p-6 flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] glass-glow reveal-hidden"
+              style={{ transitionDelay: `${idx * 100}ms` }}
             >
               <div className="flex items-start justify-between mb-5">
                 <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center group-hover:bg-gold/15 transition-colors">

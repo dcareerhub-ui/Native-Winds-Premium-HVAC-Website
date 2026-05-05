@@ -15,7 +15,7 @@ export default function About() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — Image */}
-          <div className="relative">
+          <div className="relative reveal-slide-left">
             <div className="relative overflow-hidden rounded-3xl">
               <img
                 src="https://images.pexels.com/photos/8159744/pexels-photo-8159744.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -44,7 +44,7 @@ export default function About() {
           </div>
 
           {/* Right — Content */}
-          <div>
+          <div className="reveal-slide-right">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
               <span className="text-gold text-sm font-medium tracking-wide">Meet Your Technician</span>
             </div>
